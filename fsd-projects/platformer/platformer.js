@@ -23,7 +23,7 @@ $(function () {
       canvas.height - 10,
       canvas.width + 100,
       200,
-      "rgb(118, 0, 233)",
+      "rgb(158, 158, 158)",
     ); // bottom wall
     createPlatform(-50, -50, 50, canvas.height + 500); // left wall
     createPlatform(canvas.width, -50, 50, canvas.height + 100); // right wall
