@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style> #returnButton {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+
+  background: white;
+  color: black;
+
+  border: 2px solid white;
+  border-radius: 50px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+
+  position: relative;
+  z-index: 10;
+}
+
+#returnButton:hover {
+  background: black;
+  color: white;
+  transform: scale(1.05);
+}
+</style>
     <meta charset="UTF-8" />
     <title>platformer</title>
     <link href="platformer.css" rel="stylesheet" />
@@ -11,6 +41,7 @@
   </head>
 
   <body id="body">
+    <p id = "returnButton" ><a href = "../../portfolio.html" style="text-decoration: none; color: inherit;">Return</a></p>
     <canvas id="canvas" width="1400" height="750"></canvas>
     <img id="cannon" src="images/cannon.png" />
     <img id="player" src="images/halle.png" />
