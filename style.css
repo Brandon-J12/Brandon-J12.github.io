@@ -15,10 +15,28 @@ body {
   margin: 0 auto;
   padding: 32px 40px;
 }
-
-/* ========================= */
-/* MAIN / HOME PAGE          */
-/* ========================= */
+#slide-text{
+color: white;
+bottom: 0px;
+position: fixed;
+margin: 0;
+  font-size: 50px;
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+#slide-text2{
+color: white;
+bottom: 60px;
+position: fixed;
+margin: 0;
+  font-size: 50px;
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
 
 main {
   display: grid;
@@ -39,10 +57,6 @@ main {
   gap: 12px;
 }
 
-/* ========================= */
-/* HOME TEXT                 */
-/* ========================= */
-
 h2 {
   margin: 0;
   font-size: clamp(4rem, 10vw, 7rem);
@@ -62,9 +76,6 @@ h2 {
   line-height: 1.4;
 }
 
-/* ========================= */
-/* INTERESTS                 */
-/* ========================= */
 
 #interests {
   margin-top: 32px;
@@ -103,7 +114,7 @@ h2 {
     color 0.25s ease,
     transform 0.25s ease;
 
-  cursor: default;
+  cursor: pointer;
 }
 
 #interests li:hover {
@@ -120,6 +131,12 @@ h2 {
 /* ========================= */
 /* PROFILE IMAGE             */
 /* ========================= */
+.sidebar-img-wrapper {
+  animation: perpetualFloat 3s ease-in-out infinite;
+}
+.sidebar-img-wrapper:hover {
+  animation-play-state: paused;
+}
 
 .sidebar-img {
   width: 100%;
@@ -137,11 +154,12 @@ h2 {
     filter 0.4s ease,
     transform 0.4s ease,
     box-shadow 0.4s ease;
+    
 }
 
 .sidebar-img:hover {
   filter: grayscale(0%);
-  transform: translateY(-4px);
+  transform: translateY(-10px);
 
   box-shadow:
     0 16px 40px rgba(0, 0, 0, 0.18);
@@ -224,6 +242,7 @@ nav h1 {
   text-align: center;
 
   gap: 6px;
+  animation: perpetualFloat 3s ease-in-out infinite;
 }
 
 /* Portfolio title */
@@ -273,6 +292,18 @@ nav h1 {
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
+  animation: perpetualFloat 3s ease-in-out infinite;
+}
+@keyframes perpetualFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px); 
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 #portfolio a {

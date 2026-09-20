@@ -40,9 +40,38 @@
 </li>
         </ul>
       </div>
-      <audio autoplay loop>
-        <source src="DOORS ORIGINAL SOUNDTRACK VOL. 2 - Jeff's Jingle 4.mp3">
-      </audio>
+      <audio id="background-music" loop>
+  <source src="DOORS ORIGINAL SOUNDTRACK VOL. 2 - Jeff's Jingle 4.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("background-music");
+
+  function startMusic() {
+    music.play().then(() => {
+      console.log("Music started!");
+      removeListeners();
+    }).catch(() => {
+      console.log("Autoplay blocked. Waiting for user interaction.");
+    });
+  }
+
+  function removeListeners() {
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("keydown", startMusic);
+    document.removeEventListener("pointerdown", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  }
+
+  // Try to autoplay
+  startMusic();
+
+  // Start after the user's first interaction if autoplay is blocked
+  document.addEventListener("click", startMusic);
+  document.addEventListener("keydown", startMusic);
+  document.addEventListener("pointerdown", startMusic);
+  document.addEventListener("touchstart", startMusic);
+</script>
     </main>
   </div>
 </body>

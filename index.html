@@ -7,7 +7,8 @@
 </head>
 
 <body>
-  <!-- All content goes here -->
+   <marquee id="slide-text" behavior = "loop" scrollamount = 20 >Spider-Man</marquee>
+   <marquee id="slide-text2" behavior = "loop" scrollamount = 20 direction = "right" >Spectacular</marquee>
   <div id="all-contents">
     <nav>
       <h1>Brandon's Spectacular Website</h1>
@@ -18,7 +19,7 @@
     </nav>
 
     <main>
-      <div class="sidebar">
+      <div class="sidebar-img-wrapper">
         <img class="sidebar-img"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUXNihweOXtz3RrSa-jFsWzRxIX_GLwYT07bVdnHS3SQ&s=10"
           alt="My image" />
@@ -30,7 +31,7 @@
         <div id="interests">
           <h3>Interests</h3>
           <ul>
-            <li>Rubik's Cubes</li>
+            <li><a href="https://speedcubeshop.com/?srsltid=AU7gw4VV8rVzVnWnUecX4MIS2YSxgZ6Kgu6Ok1-pXlOE9TN7RfIqvYLx" style="text-decoration: none; color: inherit;">Rubik's Cubes</a></li>
             <li>Games</li>
             <li>Sleeping</li>
             <li>Spider-Man</li>
@@ -38,11 +39,39 @@
           </ul>
         </div>
       </div>
-      <audio autoplay loop>
-        <source src="DOORS ORIGINAL SOUNDTRACK VOL. 1 - Dawn Of The Doors 4.mp3" type ="audio/mpeg">
+      <audio id="background-music" loop>
+        <source src="DOORS ORIGINAL SOUNDTRACK VOL. 1 - Dawn Of The Doors 4.mp3" type="audio/mpeg">
       </audio>
     </main>
   </div>
+  <script>
+  const music = document.getElementById("background-music");
+
+  function startMusic() {
+    music.play().then(() => {
+      console.log("Music started!");
+      removeListeners();
+    }).catch((error) => {
+      console.log("Still blocked:", error);
+    });
+  }
+
+  function removeListeners() {
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("keydown", startMusic);
+    document.removeEventListener("pointerdown", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  }
+
+  // Try autoplay when the page loads
+  startMusic();
+
+  // If autoplay is blocked, start after the user's first interaction
+  document.addEventListener("click", startMusic);
+  document.addEventListener("keydown", startMusic);
+  document.addEventListener("pointerdown", startMusic);
+  document.addEventListener("touchstart", startMusic);
+</script>
 </body>
 
 </html>
