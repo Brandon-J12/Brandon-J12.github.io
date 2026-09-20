@@ -30,7 +30,6 @@
   <body class="board">
     <!-- HTML for the box -->
     <div class="box">?</div>
-
     <script>
       (function () {
         "use strict";
@@ -51,7 +50,7 @@
         });
 
         // Every 50 milliseconds, call the update Function (see below)
-        setInterval(update, 50);
+        setInterval(update, 25);
 
         // Every time the box is clicked, call the handleBoxClick Function (see below)
         box.on("click", handleBoxClick);
@@ -94,6 +93,7 @@
         function update() {
 moveBoxTo(positionX, positionY);
         positionX = positionX + speed
+
         if (positionX > boardWidth) 
         {
   speed *= -1
@@ -110,6 +110,7 @@ positionY = positionY + speedY
    if (positionY < 0){
     speedY *= -1
    }
+   
           
         }
 

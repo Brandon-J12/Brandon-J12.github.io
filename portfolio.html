@@ -4,11 +4,14 @@
 <head>
   <title>My Portfolio for my tuff website</title>
   <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <!-- All content goes here -->
-  <div id="all-contents">
+   <marquee></marquee>
+  <div id="all-contents" class = "fade-in">
     <nav>
       <h1>Brandon's Spectacular Website</h1>
       <ul id="nav-ul">
@@ -38,6 +41,7 @@
 <li>
  <a href="fsd-projects/runtime/">Runtime : Fearless HalleBot goes on a side-scrolling adventure!</a>
 </li>
+
         </ul>
       </div>
       <audio id="background-music" loop>
@@ -63,10 +67,8 @@
     document.removeEventListener("touchstart", startMusic);
   }
 
-  // Try to autoplay
   startMusic();
 
-  // Start after the user's first interaction if autoplay is blocked
   document.addEventListener("click", startMusic);
   document.addEventListener("keydown", startMusic);
   document.addEventListener("pointerdown", startMusic);
