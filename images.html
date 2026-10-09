@@ -62,7 +62,19 @@
                 grid-template-columns: repeat(3, 1fr);
                 gap: 32px;
                 margin-top: 32px;
+                animation: perpetualFloatPic 3s ease-in-out infinite
             }
+            @keyframes perpetualFloatPic {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px); 
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
             .image-item {
                 
                 transition: transform 0.2s;
