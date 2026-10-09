@@ -132,6 +132,36 @@
                     <img class="modal-content" id="modalImg" alt="Full Size">
                     <span class="modal-arrow right">&#10095;</span>
                 </div>
+                 <audio id="background-music" loop>
+  <source src="Music_files/Roxanne (Instrumental Version).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("background-music");
+
+  function startMusic() {
+    music.play().then(() => {
+      console.log("Music started!");
+      removeListeners();
+    }).catch(() => {
+      console.log("Autoplay blocked. Waiting for user interaction.");
+    });
+  }
+
+  function removeListeners() {
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("keydown", startMusic);
+    document.removeEventListener("pointerdown", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  }
+
+  startMusic();
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("keydown", startMusic);
+  document.addEventListener("pointerdown", startMusic);
+  document.addEventListener("touchstart", startMusic);
+</script>
     </body>
       
       
